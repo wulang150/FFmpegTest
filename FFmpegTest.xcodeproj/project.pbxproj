@@ -31,7 +31,6 @@
 		9A0798B9222F724A00C88998 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0798B2222F724A00C88998 /* libswscale.a */; };
 		9A0798BB222F7A2900C88998 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0798BA222F7A2900C88998 /* AudioToolbox.framework */; };
 		9A238474223273C400A14DC2 /* EncoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A238473223273C400A14DC2 /* EncoderViewController.m */; };
-		9A23847822339BDA00A14DC2 /* vedio.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 9A23847722339BDA00A14DC2 /* vedio.yuv */; };
 		9A23847B223683D900A14DC2 /* DecoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A23847A223683D900A14DC2 /* DecoderViewController.m */; };
 		9A3ABAD4223B9A3A007551FD /* MuxVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3ABAD3223B9A3A007551FD /* MuxVideoViewController.m */; };
 		9A3ABAD7223B9BD8007551FD /* DemuxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3ABAD6223B9BD8007551FD /* DemuxViewController.m */; };
@@ -201,7 +200,6 @@
 		9A0798BA222F7A2900C88998 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9A238472223273C400A14DC2 /* EncoderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncoderViewController.h; sourceTree = "<group>"; };
 		9A238473223273C400A14DC2 /* EncoderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncoderViewController.m; sourceTree = "<group>"; };
-		9A23847722339BDA00A14DC2 /* vedio.yuv */ = {isa = PBXFileReference; lastKnownFileType = file; path = vedio.yuv; sourceTree = "<group>"; };
 		9A238479223683D900A14DC2 /* DecoderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecoderViewController.h; sourceTree = "<group>"; };
 		9A23847A223683D900A14DC2 /* DecoderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecoderViewController.m; sourceTree = "<group>"; };
 		9A3ABAD2223B9A3A007551FD /* MuxVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuxVideoViewController.h; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 		9A079794222F606400C88998 /* MovieTest */ = {
 			isa = PBXGroup;
 			children = (
-				9A2384752232751700A14DC2 /* file */,
 				9A079791222F605B00C88998 /* MuxMovieViewController.h */,
 				9A079792222F605B00C88998 /* MuxMovieViewController.m */,
 				9A238472223273C400A14DC2 /* EncoderViewController.h */,
@@ -535,14 +532,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		9A2384752232751700A14DC2 /* file */ = {
-			isa = PBXGroup;
-			children = (
-				9A23847722339BDA00A14DC2 /* vedio.yuv */,
-			);
-			path = file;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -648,7 +637,6 @@
 			files = (
 				9A07976B222F5D1E00C88998 /* LaunchScreen.storyboard in Resources */,
 				9A079768222F5D1E00C88998 /* Assets.xcassets in Resources */,
-				9A23847822339BDA00A14DC2 /* vedio.yuv in Resources */,
 				9A079766222F5D1C00C88998 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
