@@ -1,0 +1,75 @@
+//
+//  PrefixHeader.pch
+//  FFmpegTest
+//
+//  Created by Anker on 2019/3/6.
+//  Copyright © 2019 Anker. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "CommonFunc.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//获取当前设备的屏幕尺寸
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size)) : NO)
+#define iPhone6plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6PlusBigMode ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen]currentMode].size) : NO)
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+//NavBar高度
+#define NavigationBar_HEIGHT (iPhoneX ? 88.f : 64.f)
+//状态栏的高度
+#define StateBar_Height (iPhoneX ? 44.f : 20.f)
+// Tabbar的高度
+#define Tabbar_Height (iPhoneX ? (49.f+34.f) : 49.f)
+// Tabbar底部的高度.
+#define TabbarSafeBottomMargin_Height (iPhoneX ? 34.f : 0.f)
+//获取屏幕 宽度、高度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define SCREEN_CTM_HEIGHT (SCREEN_HEIGHT-NavigationBar_HEIGHT)
+
+//判断当前系统的版本号
+#define iOS11 [[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0
+#define iOS10 [[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0
+#define iOS9 [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0
+#define iOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
+#define iOS7 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0
+
+//判断是否iPhone
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+//判断是否iPad
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM()== UIUserInterfaceIdiomPad)
+//判断是否为iPod
+#define IS_IPOD ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
+
+//当前软件的版本(plist文件中)
+#define appCurrentVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]
+
+#define ColorRGB(R,G,B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1]
+
+//适配宽，这里的320我是针对5s为标准适配的,如果需要其他标准可以修改
+#define RW(R) (R)*(SCREEN_WIDTH)/320.0
+//适配高，这里的568我是针对5s为标准适配的,如果需要其他标准可以修改
+#define RH(R) (R)*(SCREEN_HEIGHT)/568.0
+//适配字体，这里是5s屏幕字体
+#define RF(R) (R)*(SCREEN_WIDTH)/320.0
+
+//返回正确的字符串
+#define RStr(X)  ([X isKindOfClass:[NSString class]]?X:@"")
+//返回正确的字典
+#define RDic(X)  ([X isKindOfClass:[NSDictionary class]]?X:@{})
+//返回正确的数组
+#define RArr(X)  ([X isKindOfClass:[NSArray class]]?X:@[])
+//建立弱指针类
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
+#define ShowFunMsg  NSLog(@">>>%s",__FUNCTION__)
+
+#endif /* PrefixHeader_pch */
