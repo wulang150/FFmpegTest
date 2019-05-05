@@ -244,7 +244,7 @@ static void log_packet1(AVRational *time_base, const AVFrame *pkt, const char *t
             return 0;
         }
         
-        //修改解码后的参数，转换为我们常见的pts是0 1 2
+        //修改解码后的参数，转换为我们常见的pts是0 1 2，ctb
         de_frame->pts = av_rescale_q(de_frame->pts, ifmt_ctx->streams[in_stream_video]->time_base, Base_TB);
         de_frame->pkt_duration = av_rescale_q(de_frame->pkt_duration, ifmt_ctx->streams[in_stream_video]->time_base, Base_TB);
         de_frame->pkt_dts = av_rescale_q(de_frame->pkt_dts, ifmt_ctx->streams[in_stream_video]->time_base, Base_TB);
